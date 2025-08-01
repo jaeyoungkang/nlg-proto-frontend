@@ -10,6 +10,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Send, Bot, User, BrainCircuit, FileCode, Search, Sparkles } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
+
 // 메시지 렌더링 컴포넌트
 const MessageBubble = ({ msg, onAnalysisRequest }: { msg: Message, onAnalysisRequest: (payload: any) => void }) => {
     const AnalysisMenu = () => {
@@ -50,9 +51,11 @@ const MessageBubble = ({ msg, onAnalysisRequest }: { msg: Message, onAnalysisReq
                                 <div className="w-2 h-2 bg-current rounded-full animate-bounce delay-150"></div>
                             </div>
                         ) : (
-                            <ReactMarkdown className="prose prose-sm max-w-none prose-p:my-2 prose-headings:my-3 prose-pre:bg-gray-800 prose-pre:text-white prose-table:border">
+                            <div className="prose prose-sm max-w-none prose-p:my-2 prose-headings:my-3 prose-pre:bg-gray-800 prose-pre:text-white prose-table:border">
+                              <ReactMarkdown>
                                 {msg.text}
-                            </ReactMarkdown>
+                              </ReactMarkdown>
+                            </div>
                         )}
                     </CardContent>
                 </Card>

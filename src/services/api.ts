@@ -62,7 +62,7 @@ export interface AnalyzeContextResult {
 
 // 빠른 조회 API 호출
 export async function quickQuery(question: string, projectId: string, tableIds: string[]): Promise<QuickQueryResult> {
-  const response = await fetch(`${API_BASE_URL}/quick`, {
+  const response = await fetch(`${API_BASE_URL}/query/execute`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ question, project_id: projectId, table_ids: tableIds }),
